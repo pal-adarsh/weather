@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeatherSphere ☀️🌧️❄️
 
-## Getting Started
+A beautiful, responsive weather application built with Next.js 14, TypeScript, and Tailwind CSS. Get real-time weather forecasts for any location worldwide with animated weather icons and intuitive UI.
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://weathersphere-demo.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![WeatherSphere Screenshot](./public/screenshot.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features ✨
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🌎 **Location-based weather** (auto-detects your location)
+- 🔍 **Search any city worldwide**
+- 📱 **Fully responsive design** (works on all devices)
+- 🌡️ **Temperature unit toggle** (°C/°F)
+- ⏳ **24-hour hourly forecast**
+- 📅 **5-day daily forecast**
+- 💨 **Detailed weather metrics** (wind, humidity, pressure, etc.)
+- 🌈 **Animated weather icons** that reflect current conditions
+- 🔄 **Refresh button** for updated data
+- 🚀 **Blazing fast performance** with Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used 🛠️
 
-## Learn More
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS** (with custom animations)
+- **Font Awesome** (for weather icons)
+- **OpenWeatherMap API** (weather data)
+- **Geolocation API** (for device location)
 
-To learn more about Next.js, take a look at the following resources:
+## Getting Started 🚀
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Node.js (v18 or later)
+- npm or yarn
+- OpenWeatherMap API key ([get one here](https://openweathermap.org/api))
 
-## Deploy on Vercel
+### Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weathersphere.git
+   cd weathersphere
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a .env.local file in the root directory and add your API key :
+   ```bash
+   NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open in your browser.
+   ```bash
+   http://localhost:3000
+   ```
+
+
+
+
