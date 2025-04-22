@@ -41,7 +41,7 @@ A beautiful, responsive weather application built with Next.js 14, TypeScript, a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/weathersphere.git
+   git clone https://github.com/pal-adarsh/weather.git
    cd weathersphere
    ```
 
