@@ -2,10 +2,10 @@
 
 A beautiful, responsive weather application built with Next.js 14, TypeScript, and Tailwind CSS. Get real-time weather forecasts for any location worldwide with animated weather icons and intuitive UI.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://weathersphere-demo.vercel.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+## ScreenShot 📷
 
-![WeatherSphere Screenshot](./public/screenshot.png)
+![image](https://github.com/user-attachments/assets/9c389f67-f295-488a-8058-393c77bfdd77)
+
 
 ## Features ✨
 
