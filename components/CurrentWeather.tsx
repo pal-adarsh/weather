@@ -8,43 +8,58 @@ interface CurrentWeatherProps {
   unit: 'metric' | 'imperial'
 }
 
-export default function CurrentWeather({ data, unit }: CurrentWeatherProps) {
-  const tempUnit = unit === 'metric' ? '°C' : '°F'
-  const temp = unit === 'metric' ? Math.round(data.main.temp) : Math.round((data.main.temp * 9/5) + 32)
-  const tempMax = unit === 'metric' ? Math.round(data.main.temp_max) : Math.round((data.main.temp_max * 9/5) + 32)
-  const tempMin = unit === 'metric' ? Math.round(data.main.temp_min) : Math.round((data.main.temp_min * 9/5) + 32)
+// Utility function to convert temperature
+const formatTemperature = (kelvin: number, unit: 'metric' | 'imperial'): number =>
+  unit === 'metric'
+    ? Math.round(kelvin)
+    : Math.round((kelvin * 9) / 5 + 32)
 
-  const currentDate = new Date(data.dt * 1000).toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+const formatDate = (timestamp: number) =>
+  new Date(timestamp * 1000).toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   })
 
+export default function CurrentWeather({ data, unit }: CurrentWeatherProps) {
+  const temp = formatTemperature(data.main.temp, unit)
+  const tempMax = formatTemperature(data.main.temp_max, unit)
+  const tempMin = formatTemperature(data.main.temp_min, unit)
+  const tempUnit = unit === 'metric' ? '°C' : '°F'
+  const currentDate = formatDate(data.dt)
+
   return (
-    <div className="current-weather">
-      <div className="weather-main">
+    <section className="current-weather p-6 rounded-xl shadow-md bg-white dark:bg-gray-900 transition duration-300">
+      <header className="weather-main flex items-center justify-between mb-4">
         <div className="location-time">
-          <h2>{data.name}, {data.sys.country}</h2>
-          <p>{currentDate}</p>
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+            {data.name}, {data.sys.country}
+          </h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300">{currentDate}</p>
         </div>
-        <WeatherIcon 
-          weatherId={data.weather[0].id} 
-          iconCode={data.weather[0].icon} 
-          className="weather-icon"
+        <WeatherIcon
+          weatherId={data.weather[0].id}
+          iconCode={data.weather[0].icon}
+          className="w-16 h-16"
         />
-      </div>
-      <div className="weather-details">
-        <div className="temperature">
-          <span>{temp}</span>
-          <span className="unit">{tempUnit}</span>
+      </header>
+
+      <div className="weather-details text-center">
+        <div className="temperature text-5xl font-semibold text-blue-600 dark:text-blue-300">
+          {temp}
+          <span className="text-xl align-top ml-1">{tempUnit}</span>
         </div>
-        <div className="description">{data.weather[0].description}</div>
-        <div className="min-max">
-          <span>H: {tempMax}°</span>
-          <span>L: {tempMin}°</span>
+
+        <div className="description text-gray-700 dark:text-gray-300 capitalize my-2">
+          {data.weather[0].description}
+        </div>
+
+        <div className="min-max text-gray-600 dark:text-gray-400 text-sm mt-2 space-x-4">
+          <span>High: {tempMax}°</span>
+          <span>Low: {tempMin}°</span>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
