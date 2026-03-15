@@ -1,7 +1,7 @@
 
 import '../lib/fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '../styles/globals.css'
+import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -17,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+      </head>
       <body>
         {children}
       </body>
     </html>
   )
-}
+}
