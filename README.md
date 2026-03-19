@@ -4,6 +4,7 @@ A beautiful, responsive weather application built with Next.js 14, TypeScript, a
 
 ## ScreenShot 📷
 
+![image](https://github.com/user-attachments/assets/b41b13d6-d30e-4b84-a63b-a289699555c0)
 
 
 
